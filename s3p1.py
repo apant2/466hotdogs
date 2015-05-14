@@ -7,6 +7,13 @@ def relative_entropy(filename):
     pwm.pop(0) # don't need >PMOTIF
     pwm.pop(-1) # don't need <
 
+#### Start of implementation of REM from online formula
+    for a in range(ML):
+        for b in range(4):
+            relative_entropy += PWM_predicted[a][b] * math.log(PWM_predicted[a][b] / PWM_actual[a], 2);
+
+#### END REM online formula implementation
+
     rel_ent = [] # store relative entropies of each position
     for i in range(len(pwm)):
         sum = 0 # relative entropy at a position
@@ -21,3 +28,5 @@ def relative_entropy(filename):
     print(rel_ent)
 
 relative_entropy("predictedmotif.txt")
+
+
