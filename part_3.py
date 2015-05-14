@@ -17,23 +17,24 @@ for subdir, dirs, files in os.walk(rootdir):
         #2)	Number	of	overlapping	positions	or	overlapping	sites	between	“sites.txt”	and
         #“predictedsites.txt”.
         a=[]
-            b=[]
-            with open('sites.txt', 'r') as s:
-                for line in s:
-                    val=line.strip()
-                    a.append(int(val))
+        b=[]
+        with open('sites.txt', 'r') as s:
+            for line in s:
+                val=line.strip()
+                a.append(int(val))
         with open('predictedsites.txt', 'r') as p:
             for line in p:
                 val=line.strip()
-                    b.append(int(val))
+                b.append(int(val))
         
-            overlap = set(a) & set(b)
-            #count the overlap set or something
-            #output result to some file
+        overlap = set(a) & set(b)
+        #count the overlap set or something
+        #output result to some file
             
             
-            #3)	Running	time.
-            start_time = time.monotonic()
-            #Run algorithm on one directory
+        #3)	Running	time.
+        start_time = time.monotonic()
+        #Run algorithm on one directory
     end_time = time.monotonic()
-#output change in times to a file that will be analyzed
+
+#do some analysis or something
