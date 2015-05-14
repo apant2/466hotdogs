@@ -46,10 +46,8 @@ for subdir, dirs, files in os.walk(rootdir):
                 b.append(int(val))
         
         overlap = set(a) & set(b)
-        count = count(overlap)
-        count_arr.append(count)
-        #output result to some file
-
+        count_val = len(overlap)
+        count_arr.append(count_val)
 
 
 os.chdir(rootdir)
