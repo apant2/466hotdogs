@@ -2,9 +2,6 @@
 import numpy as np
 import time
 
-def num_lines(filename):
-    return sum(1 for line in open(filename))
-
 def score(seq, num_seq, DNA, ML):  # number of sequences we are comparing in profile matrix
     profile_matrix = np.zeros((4, ML))
     occurrences = np.zeros(ML)
@@ -71,9 +68,9 @@ s[0] = best_motif[0]
     for i in range(2, len(seq)): # go through set of all sequences
         for j in range(seq_size-ML+1): # go through potential motifs in each sequence
             s[i] = j
-            s = score(s, i+1, seq, ML)
-            if s > best_score:
-                best_score = s
+            sc = score(s, i+1, seq, ML)
+            if sc > best_score:
+                best_score = sc
                 s[i] = j
                 best_motif[i] = j
 
@@ -88,8 +85,6 @@ pmotif = open("predictedmotif.txt", 'w')
     for i in range(len(pwm_rows)):
         pmotif.write(str(pwm_rows[i, 0]) + " " + str(pwm_rows[i, 1]) + " " + str(pwm_rows[i, 2]) + " " + str(pwm_rows[i, 3]) + "\n")
 pmotif.write("<")
-
-#-------Function Call--------
 start = time.time()
 find_motifs()
 end = time.time()
