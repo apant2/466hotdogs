@@ -63,7 +63,7 @@ def find_motifs():
                 best_motif[1] = s[1]
 
 s[0] = best_motif[0]
-    s[1] = best_motif[1]
+s[1] = best_motif[1]
     
     for i in range(2, len(seq)): # go through set of all sequences
         for j in range(seq_size-ML+1): # go through potential motifs in each sequence
