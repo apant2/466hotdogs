@@ -36,7 +36,10 @@ def find_motifs():
         mot_len = f.readlines()
     with open("sequences.fa", 'r') as f:
         seq = f.read().splitlines()
+<<<<<<< HEAD
     seq = [elem for elem in seq if len(elem) ==500] # filter out the >seq w/e lines.
+=======
+>>>>>>> FETCH_HEAD
     ML = int(mot_len[0]) #cast mot_len to an integer
     m = [""] * len(seq)
     pred_sites = [""]*len(seq)
@@ -45,8 +48,13 @@ def find_motifs():
     m[1] = "" * ML
     for i in range(0, seq_size-ML + 1):
         for j in range(0, seq_size-ML + 1):
+<<<<<<< HEAD
             test_motif_A = seq[0][i:i + ML] # the slice represents the size of the motif
             test_motif_B = seq[1][j:j + ML]
+=======
+            test_motif_A = seq[1][i:i + ML] # the slice represents the size of the motif
+            test_motif_B = seq[3][j:j + ML]
+>>>>>>> FETCH_HEAD
             if score(test_motif_A, test_motif_B) > score(m[0], m[1]): # if new motif score greater than score of current motif score, replace current with new
                 m[0] = test_motif_A
                 m[1] = test_motif_B
