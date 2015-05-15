@@ -10,8 +10,7 @@ def relative_entropy(filename):
 #### Start of implementation of REM from online formula
     for a in range(ML):
         for b in range(4):
-            relative_entropy += PWM_predicted[a][b] * math.log(PWM_predicted[a][b] / PWM_actual[a], 2);
-
+            relative_entropy += PWM_predicted[a][b] * math.log(PWM_predicted[a][b] / PWM_actual[a], 2)
 #### END REM online formula implementation
 
     rel_ent = [] # store relative entropies of each position
