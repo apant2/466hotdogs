@@ -27,9 +27,9 @@ for subdir, dirs, files in os.walk(rootdir):
         delta = end_time - start_time
         time_per_set.append(delta)
 
-        #1)	Convert	the	motif	in	motif.txt	to	a	PWM	format	and	compute	relative	entropy
-        #between	“motif.txt”	and	“predictedmotif.txt”	(search	the	web	for	what	“relative
-        #entropy”	means).
+        # 1)Convert	the	motif	in	motif.txt	to	a	PWM	format	and	compute	relative	entropy
+        # between	“motif.txt”	and	“predictedmotif.txt”	(search	the	web	for	what	“relative
+        # entropy”	means).
         
         
         #2)	Number	of	overlapping	positions	or	overlapping	sites	between	“sites.txt”	and
