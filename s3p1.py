@@ -39,10 +39,10 @@ def relative_entropy(filename1, filename2):
         pwm = f.read().splitlines()
     pwm.pop(0) # don't need >PMOTIF
     pwm.pop(-1) # don't need <
-<<<<<<< HEAD
     with open(filename2, 'r') as f:
         motif_modified = f.read().splitlines()
     
+<<<<<<< HEAD
 =======
 
 #### Start of implementation of REM from online formula
@@ -52,6 +52,8 @@ def relative_entropy(filename1, filename2):
 #### END REM online formula implementation
 
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> origin/master
     rel_ent = [] # store relative entropies of each position
     for i in range(len(pwm)):
         sum = 0 # relative entropy at a position
@@ -61,7 +63,6 @@ def relative_entropy(filename1, filename2):
             p = float(pwm_line[j]) # p is originally a string. need to convert to float
             q = float(motif_line[j])
             if p==0:
-<<<<<<< HEAD
                 p = 1e-3 # small value. logarithms cannot take 0.
             if q==0:
                 q = 1e-3 # small value. logarithms cannot take 0.
@@ -71,15 +72,6 @@ def relative_entropy(filename1, filename2):
     re_file = open("relative_entropy.txt", 'w')
     for re_line in rel_ent:
         re_file.write(str(re_line) + "\n")
-# end of step 3.1
-=======
-                p = 1e-10 # small value. logarithms cannot take 0.
-            sum += p*math.log(p/0.25)
-        rel_ent.append(sum)
-
-    print(rel_ent)
-
-relative_entropy("predictedmotif.txt")
 
 
->>>>>>> FETCH_HEAD
+relative_entropy("predictedmotif.txt", "powermotif.txt")
